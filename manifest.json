@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+  "name": "YouTube Fixed Player",
+  "version": "1.0",
+
+  "description": "YouTube player becomes fixed on scroll.",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "<all_urls>"
+  ],
+
+  "icons": {
+    "48": "icons/ic_ondemand_video_black_48dp_1x.png",
+    "96": "icons/ic_ondemand_video_black_48dp_2x.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["js/noframework.waypoints.js","js/yt-fixed-player.js"],
+      "css": ["css/yt-fixed-player.css"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/ic_ondemand_video_black_48dp_1x.png",
+    "default_title": "YouTube Fixed Player"
+  }
+
+}
